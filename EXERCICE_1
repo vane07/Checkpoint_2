@@ -1,0 +1,89 @@
+Q.1.1.
+
+Capture de l'ip du PC client1:
+
+![client1-ip](https://github.com/user-attachments/assets/b0d9e8a3-8ff9-4e9f-991f-135061640f6e)
+
+Ping ipv4 vers le client1:
+
+![ping-ipv4-vers-client1](https://github.com/user-attachments/assets/f982191e-6126-47fd-a142-dcb05b072de0)
+
+Le ping ipv4 vers le client1 a échoué parce que les 2 machines cliente et serveur ne sont pas sur le même réseau. Parce qu' on s'aperçoit que le masque de sous-réseau est
+en 255.255.255.0 sur le serveur et que l’adresse ip du serveur est 172.16.10.10 alors que l’adresse ip du client1 est 172.16.100.50 alors que ça devrait être quelque chose
+comme 172.16.10.x.
+
+MODIFICATION SUR LE CLIENT DE L'ADRESSE IP POUR QUE CA FONCTIONNE:
+
+L'adresse ip du client a changé:
+
+![ipv4-client-changer](https://github.com/user-attachments/assets/bdea5399-e8af-4849-87e4-0721c4e823a6)
+
+Ping fonctionnel:
+
+![ping-reussi](https://github.com/user-attachments/assets/1fa5ebee-129d-447c-94ba-e67940a857cc)
+
+Q.1.2
+
+Le ping ipv6 fonctionne déjà:
+
+![ping-ipv6-fonctionne-déja](https://github.com/user-attachments/assets/cb0eb15c-9d5a-4e50-af29-e1cbee15c31c)
+
+Q.1.3
+
+Le ping ipv6 fonctionne déjà, voilà la capture:
+
+![ping-ipv6-fonctionne-déja](https://github.com/user-attachments/assets/cb0eb15c-9d5a-4e50-af29-e1cbee15c31c)
+
+Q.1.4
+
+Il semble que le dhcp soit déjà actif sur le serveur:
+
+![dhcp-actif-sur-serveur](https://github.com/user-attachments/assets/ee78f2e4-3bb3-4dc5-a383-d2a41da6888f)
+
+Et sur la machine cliente, voila ce que j’ai fait:
+
+J'ai mis le dhcp en place.
+
+![dhcp-client-mis-en-place](https://github.com/user-attachments/assets/85f8315d-9a22-49da-8589-9b3116dc2d16)
+
+Q.1.5
+
+
+Le client ne récupère pas la première adresse ip disponible sur cette plage parce qu’elle est réservée pour le routeur par convention. 
+
+Dans une configuration DHCP, l'adresse .1 est généralement exclue de la plage d'adresses dynamiques pour éviter de la réattribuer accidentellement à un autre appareil. 
+Elle est souvent configurée manuellement sur le routeur.
+
+Nouvelle ip dhcp pour le client1:
+
+![nouvelle-ip-dhcp-client1](https://github.com/user-attachments/assets/278bc1f3-fe81-4415-86b5-71676155c2bd)
+
+Q.1.6
+
+Voila la plage DHCP sur le serveur:
+
+![plage-dhcp-serveur](https://github.com/user-attachments/assets/92c1ed98-1043-4f29-9413-0f7751bb034e)
+
+Modification de l'ip du client1 sur le serveur DHCP:
+
+![modification-ip-client1-sur-server-dhcp](https://github.com/user-attachments/assets/35d120c8-482b-45a9-9a9c-be90021e522d)
+
+Preuve de la nouvelle ip dhcp client:
+
+![preuve-nouvelle-ip-dhcp-client](https://github.com/user-attachments/assets/6e6cad68-caa7-4777-aca6-5700a741a832)
+
+Q.1.7
+
+
+Si on passe ce réseaux en ipv6 cela éviterait toute ces manipulations vu que chaque appareil en ipv6 à une adresse ip dédié, sans masque de sous réseaux …etc
+
+Q.1.8
+
+
+Non dans ce cas le serveur dhcp n’est pas obsolète, parce que on peut aussi le configurer en ipv6 (voir la capture suivante):
+
+(Capture qui montre que l'on peut configurer le serveur en ipv6:)
+
+![dhcp-en-ipv6](https://github.com/user-attachments/assets/697a6d96-8532-4f78-bb13-a5a0da3ea77d)
+
+
